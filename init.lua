@@ -9,7 +9,7 @@ vim.cmd("set title")
 
 -- Line Numbers
 vim.wo.number = true
-vim.wo.relativenumber = true
+-- vim.wo.relativenumber = true
 
 -- Tabstops
 vim.opt.tabstop = 4
@@ -18,6 +18,10 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
+
+vim.api.nvim_exec([[
+  autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal tabstop=2 shiftwidth=2 softtabstop=2
+]], false)
 
 -- Comments
  require('nvim_comment').setup()
