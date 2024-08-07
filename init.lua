@@ -43,4 +43,11 @@ vim.cmd [[
 
 
 -- ClipBoard
-vim.cmd("set clipboard+=unnamedplus")
+vim.opt.clipboard = "unnamedplus"
+
+-- Godot
+local gdproject = io.open(vim.fn.getcwd()..'/project.godot', 'r')
+if gdproject then
+    io.close(gdproject)
+    vim.fn.serverstart './godothost'
+end

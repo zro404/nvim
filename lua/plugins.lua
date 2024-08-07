@@ -61,4 +61,9 @@ return require('packer').startup(function(use)
         run = "make install_jsregexp"
     })
     use "rafamadriz/friendly-snippets"
+
+    use {
+        "habamax/vim-godot",
+        event = 'VimEnter'
+    }
 end)
